@@ -11,23 +11,19 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Cosmic Background */}
-      <div className="absolute inset-0 cosmic-gradient" />
-      
-      {/* Floating Shapes */}
-      <div className="floating-shapes" />
-      
-      {/* Animated Eye Background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-20">
-        <div className="relative">
-          <div className="w-96 h-96 rounded-full eye-gradient animate-pulse-slow" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-32 h-32 bg-black rounded-full animate-iris-shift">
-              <div className="w-8 h-8 bg-white rounded-full m-auto mt-12 animate-pulse" />
-            </div>
-          </div>
-        </div>
+      {/* Spline 3D Background */}
+      <div className="absolute inset-0">
+        <iframe 
+          src='https://my.spline.design/eyeonyou-FeU6DPllVSMduM8dbYS2MN2t/' 
+          frameBorder='0' 
+          width='100%' 
+          height='100%'
+          className="pointer-events-none"
+        />
       </div>
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40" />
 
       {/* Main Content */}
       <div className="relative z-10 text-center">
