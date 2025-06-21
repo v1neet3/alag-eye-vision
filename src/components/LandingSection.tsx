@@ -18,15 +18,14 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           frameBorder='0' 
           width='100%' 
           height='100%'
-          className="pointer-events-none"
         />
       </div>
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
+      <div className="absolute inset-0 bg-black bg-opacity-40 pointer-events-none" />
 
       {/* Main Content */}
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 text-center pointer-events-auto">
         <div className="mb-8 animate-fade-in-up">
           <EyeIcon 
             size={80} 
@@ -57,7 +56,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float pointer-events-none">
         <div className="w-1 h-12 bg-gradient-to-b from-mystic-pink to-transparent rounded-full" />
       </div>
     </section>
