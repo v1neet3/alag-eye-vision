@@ -1,12 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from 'react';
+import { CustomCursor } from '@/components/CustomCursor';
+import { LandingSection } from '@/components/LandingSection';
+import { VisionSection } from '@/components/VisionSection';
+import { CollectionsSection } from '@/components/CollectionsSection';
+import { ProjectsSection } from '@/components/ProjectsSection';
+import { ContactSection } from '@/components/ContactSection';
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+  const [showMainSite, setShowMainSite] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+    
+    return () => {
+      document.body.style.cursor = 'auto';
+    };
+  }, []);
+
+  const handleEnterVision = () => {
+    setShowMainSite(true);
+  };
+
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-deep-blue flex items-center justify-center">
+        <div className="animate-pulse text-mystic-pink text-2xl font-syne">
+          Loading consciousness...
+        </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-deep-blue overflow-x-hidden">
+      <CustomCursor />
+      
+      {!showMainSite ? (
+        <LandingSection onEnter={handleEnterVision} />
+      ) : (
+        <>
+          <VisionSection />
+          <CollectionsSection />
+          <ProjectsSection />
+          <ContactSection />
+        </>
+      )}
     </div>
   );
 };
