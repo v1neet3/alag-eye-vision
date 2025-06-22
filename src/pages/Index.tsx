@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { CustomCursor } from '@/components/CustomCursor';
 import { LandingSection } from '@/components/LandingSection';
 import { VisionSection } from '@/components/VisionSection';
+import { PhilosophySection } from '@/components/PhilosophySection';
 import { CollectionsSection } from '@/components/CollectionsSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { ContactSection } from '@/components/ContactSection';
@@ -44,6 +45,7 @@ const Index = () => {
       ) : (
         <>
           <VisionSection />
+          <PhilosophySection />
           <CollectionsSection />
           <ProjectsSection />
           <ContactSection />

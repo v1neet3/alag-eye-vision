@@ -43,10 +43,17 @@ export const CollectionsSection = () => {
           <h2 className="text-6xl font-syne font-bold mb-6 text-shadow-glow">
             Collections & Art
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Each piece is a window into different dimensions of consciousness, 
-            crafted to awaken the observer's inner vision.
-          </p>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8">
+              Discover our curated collections and artistic endeavors. From unique art pieces to exclusive collections, 
+              ALAG showcases creativity and innovation. Dive into a world where art meets individuality and explore 
+              our offerings that break the conventional mold.
+            </p>
+            <p className="text-lg text-gray-400">
+              Each piece is a window into different dimensions of consciousness, 
+              crafted to awaken the observer's inner vision.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
