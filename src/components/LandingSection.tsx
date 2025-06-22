@@ -26,18 +26,25 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
 
       {/* Main Content */}
       <div className="relative z-10 text-center pointer-events-auto">
-        <div className="mb-8 animate-fade-in-up">
+        {/* ALAG Logo */}
+        <div className="mb-12 animate-fade-in-up">
+          <img 
+            src="/lovable-uploads/3efe12e6-a0a4-4e27-aca9-31b4a6b9aece.png" 
+            alt="ALAG Logo"
+            className="mx-auto h-32 w-auto mb-8 opacity-90 hover:opacity-100 transition-opacity duration-300"
+          />
           <EyeIcon 
-            size={80} 
-            className="mx-auto text-mystic-pink animate-eye-blink mb-6"
+            size={60} 
+            className="mx-auto text-mystic-pink animate-eye-blink"
           />
         </div>
         
-        <h1 className="text-8xl font-syne font-bold mb-6 text-shadow-glow animate-scale-in">
-          a<span className="text-tribal-orange">ल</span>g
+        {/* Brand Name - Updated to match logo style */}
+        <h1 className="text-7xl font-syne font-bold mb-8 text-shadow-glow animate-scale-in tracking-wider">
+          ALAG
         </h1>
         
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-300">
+        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-300 leading-relaxed">
           A Brand Not Confined to Consciousness, But Embracing All
         </p>
         
@@ -48,7 +55,8 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           className={`
             px-12 py-4 rounded-full glass-effect text-lg font-syne font-medium
             transition-all duration-300 hover:scale-105 animate-fade-in-up delay-500
-            ${isHovered ? 'text-tribal-orange' : 'text-white'}
+            border border-white border-opacity-20 hover:border-opacity-40
+            ${isHovered ? 'text-tribal-orange shadow-lg shadow-tribal-orange/20' : 'text-white'}
           `}
         >
           Enter the Vision
