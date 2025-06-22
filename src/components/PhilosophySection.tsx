@@ -1,9 +1,6 @@
-
 import { EyeIcon, UsersIcon, SparklesIcon } from 'lucide-react';
-
 export const PhilosophySection = () => {
-  return (
-    <section className="relative py-20 min-h-screen">
+  return <section className="relative py-20 min-h-screen">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-cosmic-purple via-deep-blue to-sunset-purple" />
       
@@ -46,14 +43,11 @@ export const PhilosophySection = () => {
             <div className="glass-effect p-8 rounded-2xl">
               <div className="flex items-center mb-6">
                 <EyeIcon size={32} className="text-soft-cyan mr-4" />
-                <h3 className="text-2xl font-syne font-bold">About ALAG</h3>
+                <h3 className="text-2xl font-syne font-bold">About aलg</h3>
               </div>
               <div className="space-y-4 text-lg leading-relaxed opacity-90">
-                <p>
-                  ALAG represents the extraordinary—breaking free from the conventional. 
-                  We are more than just a brand; we are a statement of individualism, 
-                  flourishing within a shared collective consciousness.
-                </p>
+                <p>aलg
+ represents the extraordinary—breaking free from the conventional. We are more than just a brand; we are a statement of individualism, flourishing within a shared collective consciousness.</p>
                 <p>
                   This is a space where you are free to define yourself, yet always 
                   supported by a community that shares your journey.
@@ -63,6 +57,5 @@ export const PhilosophySection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
