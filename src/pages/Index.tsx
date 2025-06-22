@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { CustomCursor } from '@/components/CustomCursor';
 import { LandingSection } from '@/components/LandingSection';
-import { Navigation } from '@/components/Navigation';
 import { VisionSection } from '@/components/VisionSection';
 import { PhilosophySection } from '@/components/PhilosophySection';
 import { CollectionsSection } from '@/components/CollectionsSection';
@@ -45,7 +44,6 @@ const Index = () => {
         <LandingSection onEnter={handleEnterVision} />
       ) : (
         <>
-          <Navigation />
           <div id="vision">
             <VisionSection />
           </div>
