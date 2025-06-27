@@ -14,7 +14,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
       {/* Spline 3D Background */}
       <div className="absolute inset-0">
         <iframe 
-          src='https://my.spline.design/eyeonyou-FeU6DPllVSMduM8dbYS2MN2t/' 
+          src='https://my.spline.design/spiriteyesfollow-h70gTOYWXyg28sNgoTd0Fsar/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
