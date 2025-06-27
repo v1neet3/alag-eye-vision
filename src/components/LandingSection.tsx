@@ -20,7 +20,7 @@ export const LandingSection = ({
       <div className="relative z-10 text-center pointer-events-auto">
         {/* ALAG Logo */}
         <div className="mb-12 animate-fade-in-up">
-          <img src="/lovable-uploads/3efe12e6-a0a4-4e27-aca9-31b4a6b9aece.png" alt="ALAG Logo" className="mx-auto h-32 w-auto mb-8 opacity-90 hover:opacity-100 transition-opacity duration-300" />
+          <img alt="ALAG Logo" className="mx-auto h-32 w-auto mb-8 opacity-90 hover:opacity-100 transition-opacity duration-300" src="/lovable-uploads/66b3d417-a6bb-460c-a118-8f8f9af49961.png" />
           <EyeIcon size={60} className="mx-auto text-mystic-pink animate-eye-blink" />
         </div>
         
