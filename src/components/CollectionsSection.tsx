@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { EyeIcon, ImageIcon, PaletteIcon, BrainIcon, SkullIcon, BookOpenIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { EyeIcon, ImageIcon, PaletteIcon, BrainIcon, SkullIcon, BookOpenIcon } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const collections = [
@@ -73,6 +73,8 @@ const collections = [
 export const CollectionsSection = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+  console.log('CollectionsSection rendering, collections count:', collections.length);
+
   return (
     <section className="relative py-20 min-h-screen">
       {/* Background */}
@@ -98,22 +100,23 @@ export const CollectionsSection = () => {
         </div>
 
         {/* Slideshow Carousel */}
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           <Carousel
             opts={{
               align: "start",
               loop: true,
+              skipSnaps: false,
+              dragFree: true,
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="flex gap-4 ml-0">
               {collections.map((collection) => (
-                <CarouselItem key={collection.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                <CarouselItem key={collection.id} className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex-shrink-0">
                   <div
-                    className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-mystic-pink/20"
+                    className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-mystic-pink/20 h-96"
                     onMouseEnter={() => setHoveredCard(collection.id)}
                     onMouseLeave={() => setHoveredCard(null)}
-                    style={{ aspectRatio: '3/4' }}
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0">
@@ -121,6 +124,8 @@ export const CollectionsSection = () => {
                         src={collection.image} 
                         alt={collection.title}
                         className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:brightness-110"
+                        onLoad={() => console.log('Image loaded:', collection.image)}
+                        onError={() => console.error('Image failed to load:', collection.image)}
                       />
                       <div className={`absolute inset-0 bg-gradient-to-t ${collection.color} opacity-40 transition-opacity duration-500 group-hover:opacity-60`} />
                     </div>
@@ -185,9 +190,9 @@ export const CollectionsSection = () => {
               ))}
             </CarouselContent>
             
-            {/* Custom Navigation Buttons */}
-            <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300" />
-            <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300" />
+            {/* Navigation Buttons */}
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300 z-10" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300 z-10" />
           </Carousel>
         </div>
       </div>
