@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -79,6 +78,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -120,6 +122,10 @@ export default {
 				'scale-in': {
 					'0%': { opacity: '0', transform: 'scale(0.8)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
@@ -130,7 +136,8 @@ export default {
 				'eye-blink': 'eye-blink 4s ease-in-out infinite',
 				'iris-shift': 'iris-shift 8s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'scale-in': 'scale-in 0.6s ease-out'
+				'scale-in': 'scale-in 0.6s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out'
 			}
 		}
 	},

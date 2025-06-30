@@ -136,4 +136,9 @@
     right: 10%;
     animation-delay: -4s;
   }
+
+  /* New radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
