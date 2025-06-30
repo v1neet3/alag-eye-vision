@@ -20,7 +20,13 @@ export const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    const mailtoLink = `mailto:vineet.hankare10@gmail.com?subject=${subject}&body=${body}`;
+    
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -130,10 +136,19 @@ export const ContactSection = () => {
           <p className="text-gray-400 mb-4">
             © 2024 ALAG. A Brand Not Confined to Consciousness, But Embracing All.
           </p>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 mb-4">
             <EyeIcon size={16} className="text-mystic-pink animate-pulse" />
             <span className="text-sm text-gray-500">Designed with awareness</span>
             <EyeIcon size={16} className="text-mystic-pink animate-pulse" />
+          </div>
+          <div className="text-center">
+            <p className="text-gray-400 text-sm mb-2">Contact Details:</p>
+            <a 
+              href="mailto:vineet.hankare10@gmail.com" 
+              className="text-tribal-orange hover:text-mystic-pink transition-colors duration-300"
+            >
+              vineet.hankare10@gmail.com
+            </a>
           </div>
         </div>
       </div>

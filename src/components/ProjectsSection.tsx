@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ExternalLinkIcon, HeartIcon, TrendingUpIcon, ShieldIcon, EyeIcon, GithubIcon, XIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,7 +48,7 @@ const projects = [
     icon: EyeIcon,
     color: "from-purple-500 to-pink-500",
     status: "Live",
-    githubUrl: "https://github.com/yourusername/alag",
+    githubUrl: "https://github.com/v1neet3/alag-eye-vision",
     preview: "Consciousness expansion platform"
   }
 ];
@@ -307,7 +306,7 @@ export const ProjectsSection = () => {
               className="bg-gradient-to-r from-tribal-orange to-sunset-purple hover:from-sunset-purple hover:to-tribal-orange text-white px-8 py-4 text-lg font-syne font-semibold rounded-2xl shadow-2xl hover:shadow-tribal-orange/25 transition-all duration-300 hover:scale-105"
             >
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/v1neet3" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"
@@ -335,7 +334,7 @@ export const ProjectsSection = () => {
                   asChild
                   className="bg-gradient-to-r from-mystic-pink to-cosmic-purple hover:from-cosmic-purple hover:to-mystic-pink text-white px-6 py-3 font-medium rounded-xl shadow-lg hover:shadow-mystic-pink/25 transition-all duration-300"
                 >
-                  <a href="mailto:hello@alag.com">
+                  <a href="mailto:vineet.hankare10@gmail.com">
                     Start a Conversation
                   </a>
                 </Button>
