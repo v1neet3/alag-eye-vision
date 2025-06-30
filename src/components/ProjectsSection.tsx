@@ -13,7 +13,7 @@ const projects = [
     icon: HeartIcon,
     color: "from-pink-500 to-red-500",
     status: "Active",
-    githubUrl: "https://github.com/yourusername/heartsync-pro",
+    githubUrl: "https://github.com/v1neet3/HeartSync-Pro",
     preview: "An intelligent system that monitors real-time heart activity and alerts users during abnormalities."
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     icon: TrendingUpIcon,
     color: "from-green-500 to-blue-500",
     status: "Live",
-    githubUrl: "https://github.com/yourusername/stockast",
+    githubUrl: "https://github.com/v1neet3/StocKast",
     preview: "A stock forecasting tool using machine learning to predict future price movements."
   },
   {
