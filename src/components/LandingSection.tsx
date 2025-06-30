@@ -20,17 +20,16 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Spline 3D Background - Fullscreen with custom styling to hide watermark */}
+      {/* Spline 3D Background - Fullscreen with biblically accurate angel eyes */}
       <div className="absolute inset-0">
         <iframe 
-          src='https://my.spline.design/spiriteyesfollow-h70gTOYWXyg28sNgoTd0Fsar/' 
+          src='https://my.spline.design/biblicallyaccurateangeleyesandrings-UpGTGshnay6Y3FlY9H9MZumA/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
           className="pointer-events-none"
           style={{
             filter: 'contrast(1.1) brightness(0.9)',
-            transform: 'scale(1.05)', // Slight scale to hide potential borders
           }}
         />
       </div>
