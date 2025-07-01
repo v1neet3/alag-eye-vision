@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { EyeIcon } from 'lucide-react';
 
@@ -57,19 +56,28 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
     >
       {/* Interactive Spline 3D Background with fallback */}
       <div className="absolute inset-0">
-        {/* Fallback gradient background */}
-        <div className={`absolute inset-0 bg-gradient-to-br from-deep-blue via-cosmic-purple to-sunset-purple transition-opacity duration-1000 ${splineLoaded ? 'opacity-30' : 'opacity-100'}`} />
+        {/* Enhanced fallback gradient background */}
+        <div className={`absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 transition-opacity duration-1000 ${splineLoaded ? 'opacity-20' : 'opacity-100'}`}>
+          {/* Animated background elements when Spline fails */}
+          {!splineLoaded && (
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-pink-500/20 rounded-full blur-xl animate-pulse delay-1000" />
+              <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-500" />
+            </div>
+          )}
+        </div>
         
-        {/* Spline iframe */}
+        {/* Spline iframe with working URL */}
         <iframe 
-          src='https://my.spline.design/biblicallyaccurateangeleyesandrings-c3b8e8de0a3d4c9f8b1e2f3a4b5c6d7e/' 
+          src='https://my.spline.design/untitled-7b1fcba70b07e2ecb5d59e85e13b6cc8/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
-          className="pointer-events-auto relative z-10"
+          className="pointer-events-none relative z-10"
           style={{
-            filter: `contrast(1.1) brightness(0.9) hue-rotate(${mousePosition.x * 0.5}deg)`,
-            transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.1}deg) rotateY(${(mousePosition.x - 50) * 0.1}deg)`,
+            filter: `contrast(1.1) brightness(0.8) hue-rotate(${mousePosition.x * 0.3}deg)`,
+            transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.05}deg) rotateY(${(mousePosition.x - 50) * 0.05}deg)`,
             transition: 'transform 0.1s ease-out, filter 0.3s ease-out'
           }}
           onLoad={handleSplineLoad}
