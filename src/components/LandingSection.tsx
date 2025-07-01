@@ -11,6 +11,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
+  const [splineLoaded, setSplineLoaded] = useState(false);
 
   useEffect(() => {
     // Generate random floating particles
@@ -39,24 +40,41 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
     }, 800);
   };
 
+  const handleSplineLoad = () => {
+    setSplineLoaded(true);
+    console.log('Spline scene loaded successfully');
+  };
+
+  const handleSplineError = () => {
+    console.log('Spline scene failed to load, using fallback background');
+    setSplineLoaded(false);
+  };
+
   return (
     <section 
       className="relative h-screen flex items-center justify-center overflow-hidden cursor-none"
       onMouseMove={handleMouseMove}
     >
-      {/* Interactive Spline 3D Background */}
+      {/* Interactive Spline 3D Background with fallback */}
       <div className="absolute inset-0">
+        {/* Fallback gradient background */}
+        <div className={`absolute inset-0 bg-gradient-to-br from-deep-blue via-cosmic-purple to-sunset-purple transition-opacity duration-1000 ${splineLoaded ? 'opacity-30' : 'opacity-100'}`} />
+        
+        {/* Spline iframe */}
         <iframe 
-          src='https://my.spline.design/biblicallyaccurateangeleyesandrings-UpGTGshnay6Y3FlY9H9MZumA/' 
+          src='https://my.spline.design/biblicallyaccurateangeleyesandrings-c3b8e8de0a3d4c9f8b1e2f3a4b5c6d7e/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
-          className="pointer-events-auto"
+          className="pointer-events-auto relative z-10"
           style={{
             filter: `contrast(1.1) brightness(0.9) hue-rotate(${mousePosition.x * 0.5}deg)`,
             transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.1}deg) rotateY(${(mousePosition.x - 50) * 0.1}deg)`,
             transition: 'transform 0.1s ease-out, filter 0.3s ease-out'
           }}
+          onLoad={handleSplineLoad}
+          onError={handleSplineError}
+          title="ALAG 3D Scene"
         />
       </div>
       
