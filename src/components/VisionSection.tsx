@@ -15,8 +15,8 @@ export const VisionSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20">
-      {/* Background using consistent colors */}
-      <div className="absolute inset-0 alag-secondary-gradient" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-blue via-cosmic-purple to-deep-blue" />
       
       {/* Interactive Eye */}
       <div 
@@ -33,7 +33,7 @@ export const VisionSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-6xl font-syne font-bold mb-8 text-shadow-glow bg-gradient-to-r from-mystic-pink via-tribal-orange to-sunset-purple bg-clip-text text-transparent">
+        <h2 className="text-6xl font-syne font-bold mb-8 text-shadow-glow">
           The Vision
         </h2>
         
