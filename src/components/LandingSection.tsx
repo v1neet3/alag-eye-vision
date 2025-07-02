@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { EyeIcon } from 'lucide-react';
 
@@ -68,9 +69,9 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           )}
         </div>
         
-        {/* Spline iframe with working URL */}
+        {/* Spline iframe with your biblical angel eyes design */}
         <iframe 
-          src='https://my.spline.design/untitled-7b1fcba70b07e2ecb5d59e85e13b6cc8/' 
+          src='https://my.spline.design/biblicallyaccurateangeleyesandrings-UpGTGshnay6Y3FlY9H9MZumA/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
@@ -82,7 +83,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           }}
           onLoad={handleSplineLoad}
           onError={handleSplineError}
-          title="ALAG 3D Scene"
+          title="ALAG Biblical Angel Eyes 3D Scene"
         />
       </div>
       
