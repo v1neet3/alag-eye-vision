@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
 import { EyeIcon, ImageIcon, PaletteIcon, BrainIcon, SkullIcon, BookOpenIcon } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const collections = [
   {
@@ -99,22 +100,29 @@ export const CollectionsSection = () => {
           </div>
         </div>
 
-        {/* Slideshow Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        {/* Auto-sliding Immersive Carousel */}
+        <div className="relative max-w-6xl mx-auto overflow-hidden">
           <Carousel
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
               skipSnaps: false,
-              dragFree: true,
+              dragFree: false,
             }}
             className="w-full"
           >
-            <CarouselContent className="flex gap-4 ml-0">
+            <CarouselContent className="flex gap-6 ml-0 -mx-3">
               {collections.map((collection) => (
-                <CarouselItem key={collection.id} className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex-shrink-0">
+                <CarouselItem key={collection.id} className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex-shrink-0 px-3">
                   <div
-                    className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-mystic-pink/20 h-96"
+                    className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer transition-all duration-1000 hover:scale-105 hover:shadow-2xl hover:shadow-mystic-pink/30 h-96 transform-gpu"
                     onMouseEnter={() => setHoveredCard(collection.id)}
                     onMouseLeave={() => setHoveredCard(null)}
                   >
@@ -123,76 +131,85 @@ export const CollectionsSection = () => {
                       <img 
                         src={collection.image} 
                         alt={collection.title}
-                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:brightness-110"
+                        className="w-full h-full object-cover transition-all duration-1500 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110"
                         onLoad={() => console.log('Image loaded:', collection.image)}
                         onError={() => console.error('Image failed to load:', collection.image)}
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-t ${collection.color} opacity-40 transition-opacity duration-500 group-hover:opacity-60`} />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${collection.color} opacity-40 transition-all duration-700 group-hover:opacity-70`} />
                     </div>
 
                     {/* Content Overlay */}
                     <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                      <div className={`transform transition-all duration-500 ${
-                        hoveredCard === collection.id ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-90'
+                      <div className={`transform transition-all duration-700 ${
+                        hoveredCard === collection.id ? 'translate-y-0 opacity-100 scale-105' : 'translate-y-4 opacity-90 scale-100'
                       }`}>
                         <div className="mb-4">
                           <collection.icon 
                             size={32} 
                             className={`transition-all duration-700 ${
-                              hoveredCard === collection.id ? 'animate-pulse scale-110 text-white' : 'text-gray-200'
+                              hoveredCard === collection.id ? 'animate-pulse scale-125 text-white drop-shadow-lg' : 'text-gray-200'
                             }`}
                           />
                         </div>
                         
-                        <h3 className={`text-xl font-syne font-bold mb-2 transition-all duration-500 ${
-                          hoveredCard === collection.id ? 'text-white text-shadow-glow' : 'text-gray-100'
+                        <h3 className={`text-xl font-syne font-bold mb-2 transition-all duration-700 ${
+                          hoveredCard === collection.id ? 'text-white text-shadow-glow scale-105' : 'text-gray-100'
                         }`}>
                           {collection.title}
                         </h3>
                         
-                        <p className={`text-sm transition-all duration-500 ${
+                        <p className={`text-sm transition-all duration-700 ${
                           hoveredCard === collection.id ? 'text-gray-100 opacity-100' : 'text-gray-300 opacity-80'
                         }`}>
                           {collection.description}
                         </p>
                       </div>
 
-                      {/* Hover Glow Effect */}
+                      {/* Enhanced Hover Glow Effect */}
                       <div className={`
-                        absolute inset-0 pointer-events-none transition-all duration-700
+                        absolute inset-0 pointer-events-none transition-all duration-1000
                         ${hoveredCard === collection.id 
-                          ? 'bg-gradient-radial from-white/10 via-transparent to-transparent opacity-100' 
+                          ? 'bg-gradient-radial from-white/15 via-mystic-pink/5 to-transparent opacity-100' 
+                          : 'opacity-0'
+                        }
+                      `} />
+                      
+                      {/* Subtle pulse overlay for depth */}
+                      <div className={`
+                        absolute inset-0 pointer-events-none transition-all duration-1500
+                        ${hoveredCard === collection.id 
+                          ? 'bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-100' 
                           : 'opacity-0'
                         }
                       `} />
                     </div>
 
-                    {/* Border Glow on Hover */}
+                    {/* Enhanced Border Glow on Hover */}
                     <div className={`
-                      absolute inset-0 rounded-2xl transition-all duration-500
+                      absolute inset-0 rounded-2xl transition-all duration-700
                       ${hoveredCard === collection.id 
-                        ? 'ring-2 ring-mystic-pink/50 ring-offset-2 ring-offset-transparent' 
+                        ? 'ring-2 ring-mystic-pink/60 ring-offset-2 ring-offset-transparent shadow-2xl shadow-mystic-pink/20' 
                         : ''
                       }
                     `} />
 
-                    {/* Floating Elements */}
+                    {/* Floating Elements with enhanced animation */}
                     <div className={`
                       absolute top-4 right-4 w-2 h-2 bg-mystic-pink rounded-full transition-all duration-700
-                      ${hoveredCard === collection.id ? 'animate-pulse opacity-100' : 'opacity-0'}
+                      ${hoveredCard === collection.id ? 'animate-pulse opacity-100 scale-150' : 'opacity-0'}
                     `} />
                     <div className={`
-                      absolute bottom-8 left-4 w-1 h-1 bg-soft-cyan rounded-full transition-all duration-1000 delay-200
-                      ${hoveredCard === collection.id ? 'animate-pulse opacity-100' : 'opacity-0'}
+                      absolute bottom-8 left-4 w-1 h-1 bg-soft-cyan rounded-full transition-all duration-1000 delay-300
+                      ${hoveredCard === collection.id ? 'animate-pulse opacity-100 scale-150' : 'opacity-0'}
+                    `} />
+                    <div className={`
+                      absolute top-1/3 left-4 w-1.5 h-1.5 bg-tribal-orange rounded-full transition-all duration-1200 delay-500
+                      ${hoveredCard === collection.id ? 'animate-pulse opacity-80 scale-125' : 'opacity-0'}
                     `} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
-            {/* Navigation Buttons */}
-            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300 z-10" />
-            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-mystic-pink transition-all duration-300 z-10" />
           </Carousel>
         </div>
       </div>
