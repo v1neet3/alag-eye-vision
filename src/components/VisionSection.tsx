@@ -33,26 +33,40 @@ export const VisionSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-6xl font-syne font-bold mb-8 text-shadow-glow">
+        <h2 className="text-6xl font-syne font-bold mb-8 text-shadow-glow animate-fade-in-up">
           The Vision
         </h2>
         
-        <div className="space-y-8 text-lg leading-relaxed">
-          <p className="opacity-90 animate-fade-in-up">
-            In the depths of consciousness lies an eye that sees beyond the veil of ordinary perception. 
-            ALAG represents the awakening of this inner vision—a recognition that awareness is not 
-            limited by the boundaries we perceive.
-          </p>
+        {/* Glass effect container with grid pattern */}
+        <div className="relative glass-effect p-8 rounded-2xl">
+          {/* Subtle grid pattern overlay */}
+          <div className="absolute inset-0 opacity-10 rounded-2xl" 
+               style={{
+                 backgroundImage: `
+                   linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                 `,
+                 backgroundSize: '20px 20px'
+               }}>
+          </div>
           
-          <p className="opacity-90 animate-fade-in-up delay-300">
-            We are the bridge between the seen and unseen, the conscious and unconscious, 
-            the individual and the collective. Through art, collaboration, and innovation, 
-            we explore the infinite possibilities of human expression.
-          </p>
-          
-          <p className="opacity-90 animate-fade-in-up delay-500 text-xl font-medium text-tribal-orange">
-            "The eye sees only what the mind is prepared to comprehend." - Robertson Davies
-          </p>
+          <div className="relative space-y-8 text-lg leading-relaxed">
+            <p className="opacity-90 animate-fade-in-up delay-200">
+              In the depths of consciousness lies an eye that sees beyond the veil of ordinary perception. 
+              ALAG represents the awakening of this inner vision—a recognition that awareness is not 
+              limited by the boundaries we perceive.
+            </p>
+            
+            <p className="opacity-90 animate-fade-in-up delay-400">
+              We are the bridge between the seen and unseen, the conscious and unconscious, 
+              the individual and the collective. Through art, collaboration, and innovation, 
+              we explore the infinite possibilities of human expression.
+            </p>
+            
+            <p className="opacity-90 animate-fade-in-up delay-600 text-xl font-medium text-tribal-orange">
+              "The eye sees only what the mind is prepared to comprehend." - Robertson Davies
+            </p>
+          </div>
         </div>
       </div>
     </section>
