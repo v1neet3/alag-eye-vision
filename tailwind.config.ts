@@ -126,6 +126,10 @@ export default {
 				'fade-in': {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '1' }
+				},
+				'infinite-scroll': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(calc(-300px * 8 - 1.5rem * 7))' }
 				}
 			},
 			animation: {
@@ -137,7 +141,8 @@ export default {
 				'iris-shift': 'iris-shift 8s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'scale-in': 'scale-in 0.6s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out'
+				'fade-in': 'fade-in 0.6s ease-out',
+				'infinite-scroll': 'infinite-scroll 40s linear infinite'
 			}
 		}
 	},

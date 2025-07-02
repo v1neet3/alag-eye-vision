@@ -21,7 +21,7 @@ export const PhilosophySection = () => {
                 <h3 className="text-2xl font-syne font-bold">Transcending Boundaries</h3>
               </div>
               <p className="text-lg leading-relaxed opacity-90">
-                ALAG embodies fluidity and the beauty of transcending labels, roles, and expectations. 
+                aलg embodies fluidity and the beauty of transcending labels, roles, and expectations. 
                 We champion individuality but recognize that true transformation occurs when unique minds unite.
               </p>
             </div>
@@ -32,13 +32,13 @@ export const PhilosophySection = () => {
                 <h3 className="text-2xl font-syne font-bold">Collective Consciousness</h3>
               </div>
               <p className="text-lg leading-relaxed opacity-90">
-                ALAG is a collective consciousness—an ever-evolving thought and movement where 
+                aलg is a collective consciousness—an ever-evolving thought and movement where 
                 individual brilliance merges with shared vision.
               </p>
             </div>
           </div>
 
-          {/* About ALAG */}
+          {/* About aलg */}
           <div className="space-y-8">
             <div className="glass-effect p-8 rounded-2xl">
               <div className="flex items-center mb-6">

@@ -41,7 +41,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "ALAG",
+    title: "aलg",
     description: "The flagship consciousness expansion platform",
     details: "Our core platform for exploring, expanding, and sharing consciousness across all dimensions of experience. A comprehensive ecosystem for digital enlightenment and community building.",
     techStack: ["React", "TypeScript", "Tailwind", "Supabase", "Framer Motion"],

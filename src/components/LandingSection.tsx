@@ -83,7 +83,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           }}
           onLoad={handleSplineLoad}
           onError={handleSplineError}
-          title="ALAG Biblical Angel Eyes 3D Scene"
+          title="aलg Biblical Angel Eyes 3D Scene"
         />
       </div>
       
@@ -158,7 +158,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
           </div>
         </div>
         
-        {/* Interactive ALAG Portal Button */}
+        {/* Interactive aलg Portal Button */}
         <div className="mb-12">
           <button
             onClick={handleClick}
@@ -201,7 +201,7 @@ export const LandingSection = ({ onEnter }: LandingProps) => {
               />
             )}
             
-            {/* Custom ALAG Typography with interactive effects */}
+            {/* Custom aलg Typography with interactive effects */}
             <div className="relative flex items-center justify-center gap-1">
               <span className={`
                 text-6xl font-bold tracking-wider transition-all duration-300

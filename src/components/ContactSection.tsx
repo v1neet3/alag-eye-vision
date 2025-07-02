@@ -134,7 +134,7 @@ export const ContactSection = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-16 border-t border-gray-700">
           <p className="text-gray-400 mb-4">
-            © 2024 ALAG. A Brand Not Confined to Consciousness, But Embracing All.
+            © 2024 aलg. A Brand Not Confined to Consciousness, But Embracing All.
           </p>
           <div className="flex items-center justify-center gap-2 mb-4">
             <EyeIcon size={16} className="text-mystic-pink animate-pulse" />

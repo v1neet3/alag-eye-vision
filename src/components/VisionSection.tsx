@@ -53,7 +53,7 @@ export const VisionSection = () => {
           <div className="relative space-y-8 text-lg leading-relaxed">
             <p className="opacity-90 animate-fade-in-up delay-200">
               In the depths of consciousness lies an eye that sees beyond the veil of ordinary perception. 
-              ALAG represents the awakening of this inner vision—a recognition that awareness is not 
+              aलg represents the awakening of this inner vision—a recognition that awareness is not 
               limited by the boundaries we perceive.
             </p>
             
